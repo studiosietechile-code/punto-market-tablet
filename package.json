@@ -1,0 +1,16 @@
+{
+  "name": "punto-market-tablet",
+  "version": "1.0.0",
+  "description": "App de Punto Market para tablet Android — mismo pos-market.html que Windows/Mac, con impresión por impresora de red.",
+  "author": "Punto.",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "sync": "cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2"
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Punto Market</string>
+    <string name="title_activity_main">Punto Market</string>
+    <string name="package_name">cl.puntosystem.market.tablet</string>
+    <string name="custom_url_scheme">cl.puntosystem.market.tablet</string>
+</resources>

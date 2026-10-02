@@ -1,0 +1,6 @@
+{
+  "appId": "cl.puntosystem.market.tablet",
+  "appName": "Punto Market",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
