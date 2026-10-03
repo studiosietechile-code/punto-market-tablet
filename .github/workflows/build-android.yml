@@ -1,0 +1,41 @@
+name: Compilar app Android
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Instalar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Instalar el SDK de Android
+        uses: android-actions/setup-android@v3
+
+      - name: Instalar dependencias (npm)
+        run: npm ci || npm install
+
+      - name: Sincronizar el proyecto de Android con Capacitor
+        run: npx cap sync android
+
+      - name: Compilar el .apk
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Dejar el .apk listo para descargar
+        uses: actions/upload-artifact@v4
+        with:
+          name: punto-market-tablet-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
